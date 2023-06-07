@@ -11,7 +11,7 @@ import com.amazonaws.services.s3.model.S3ObjectSummary;
 import io.airbyte.integrations.destination.gcs.GcsDestinationConfig;
 import io.airbyte.integrations.destination.s3.S3DestinationConstants;
 import io.airbyte.integrations.destination.s3.S3Format;
-import io.airbyte.integrations.destination.s3.util.S3OutputPathHelper;
+import io.airbyte.integrations.destination.gcs.util.GcsOutputPathHelper;
 import io.airbyte.integrations.destination.s3.writer.DestinationFileWriter;
 import io.airbyte.protocol.models.v0.AirbyteStream;
 import io.airbyte.protocol.models.v0.ConfiguredAirbyteStream;
@@ -50,7 +50,7 @@ public abstract class BaseGcsWriter implements DestinationFileWriter {
     this.s3Client = s3Client;
     this.stream = configuredStream.getStream();
     this.syncMode = configuredStream.getDestinationSyncMode();
-    this.outputPrefix = S3OutputPathHelper.getOutputPrefix(config.getBucketPath(), stream);
+    this.outputPrefix = GcsOutputPathHelper.getOutputPrefix(config.getBucketPath(), stream);
   }
 
   /**
