@@ -37,6 +37,8 @@ plugins {
     id 'distribution'
     id 'version-catalog'
     id 'maven-publish'
+    id 'ru.vyarus.use-python'
+
 }
 
 apply from: "$rootDir/publish-repositories.gradle"
@@ -46,6 +48,10 @@ repositories {
     maven {
         url 'https://airbyte.mycloudrepo.io/public/repositories/airbyte-public-jars/'
     }
+}
+
+python {
+    scope = 'USER'
 }
 
 Properties env = new Properties()

@@ -3,7 +3,7 @@ data:
   connectorType: destination
   definitionId: ca8f6566-e555-4b40-943a-545bf123117a
   dockerImageTag: 0.3.0
-  dockerRepository: airbyte/destination-gcs
+  dockerRepository: guidomutt/destination-gcs-fix
   githubIssueLabel: destination-gcs
   icon: googlecloudstorage.svg
   license: MIT

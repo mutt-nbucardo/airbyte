@@ -29,9 +29,13 @@ public class GcsOutputPathHelper {
         if (namespace != null) {
             paths.add(NAME_TRANSFORMER.convertStreamName(namespace));
         }
-        if (!bucketPath.contains(streamName)) {
+        if (!bucketPath.contains("${STREAM_NAME}") {
             paths.add(NAME_TRANSFORMER.convertStreamName(streamName));
         }
+
+        System.out.println("bucketPath .", +bucket);
+        System.out.println("stream name {}.", +streamName);
+        System.out.println("stream name converted {}.", +NAME_TRANSFORMER.convertStreamName(streamName));
 
         return String.join("/", paths).replaceAll("/+", "/");
     }

@@ -3,6 +3,10 @@ plugins {
     id 'airbyte-docker'
 }
 
+python {
+    scope = 'USER'
+}
+
 airbytePython {
     moduleDirectory 'airbyte_cdk'
 }
